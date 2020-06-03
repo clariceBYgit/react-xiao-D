@@ -53,7 +53,7 @@ const Counter = function( props){
   )
 }
 
-ReactDOM.render(
+ ReactDOM.render(
     <Counter />,
   document.getElementById('root')
 );

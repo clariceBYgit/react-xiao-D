@@ -143,7 +143,7 @@ function Mine(){
 function Classes(){
     return(
         <div>
-            <h2>课程组件</h2>
+            <h2>课程组件</h2> 
             <ul>
                 <li>
                     <Link to='/classes/react'>react</Link>

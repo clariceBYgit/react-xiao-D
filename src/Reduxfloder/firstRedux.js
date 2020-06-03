@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch)=>{
     })*/
     
     // 写法二
-//    因为redux默认只支持同步写法，所以上面的返回dispatch的方法可以简写成下面的代码
+//    因为redux默认只支持同步写法，所以上面的返回dispatch的 方法可以简写成下面的代码
    /* {
         increment : ()=>({type:'increment'}),
         decrement : ()=> ({type:'decrement'}),

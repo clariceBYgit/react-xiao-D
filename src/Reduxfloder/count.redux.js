@@ -14,7 +14,7 @@ const    decrement = ()=> ({type:'decrement'})
     // 异步操作:使用中间件applyMiddleware,thunk 
 const   asyncAdd = ()=>dispatch=>{
         setTimeout(()=>{
-            dispatch({type:'increment'})
+            dispatch({type:'increment'}) 
         },2000
 
         )

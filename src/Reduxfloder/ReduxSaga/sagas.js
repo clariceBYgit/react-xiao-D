@@ -17,7 +17,7 @@ const api = {
             } else {
                 reject({message:'用户或登陆密码错误'})
             }
-            },1000)
+            },1000) 
           
         })
     }

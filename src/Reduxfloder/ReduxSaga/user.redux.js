@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
         return state
     }
 }
-
+ 
 
 // 编写redux-saga生成action的函数
 const login = function(){

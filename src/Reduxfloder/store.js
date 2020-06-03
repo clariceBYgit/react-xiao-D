@@ -13,8 +13,8 @@ const firstReducer = ( state = 0, action)=>{
             return state ;
     }
 }
-
-// 使用中间件，logger最好是放在最后
+ 
+// 使用中间件，logger最好是放在最 后
 const store2 = createStore(firstReducer,applyMiddleware(thunk,logger))
 
 
