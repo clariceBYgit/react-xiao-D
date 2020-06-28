@@ -1,8 +1,17 @@
  import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
+import App from './App';
 
 
+// 演示PureComponent
+ReactDOM.render(
+  <App></App>,
+  document.getElementById("root")
+)
+
+
+
+/*
 // 演示react-router的4.xx的版本
 import RouterSample from './ReactRouter/RouterSample'
 ReactDOM.render(
@@ -10,7 +19,7 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-
+*/
 
 /*
 import { createStore ,applyMiddleware } from 'redux'
