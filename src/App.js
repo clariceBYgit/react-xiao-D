@@ -7,6 +7,13 @@ import Composition from './Composition/Composition'
 import HOC from './HOC/HOC'
 // 、COntext的使用
 import Context2 from './Context/Context2'
+// HOOK的一系列使用
+import UseStateHook from './HOOK/UseStateHook'
+import UseEffectHook from './HOOK/UseEffectHook'
+import UseContextHook from './HOOK/UseContextHook'
+import UseReducerComp from './HOOK/UseReducerComp'
+import UseMemoUseCallBack from './HOOK/UseMemoUseCallBack'
+import CustomHooks from './HOOK/CustomHooks'
 function App() {
   return (
     <div>
@@ -18,6 +25,13 @@ function App() {
       <HOC></HOC>
       <h1>COntext的使用</h1>
       <Context2></Context2>
+      <h1>HOOKs的一系列使用</h1>
+      <UseStateHook></UseStateHook>
+      <UseEffectHook></UseEffectHook>
+      <UseContextHook></UseContextHook>
+      <UseReducerComp></UseReducerComp>
+      <UseMemoUseCallBack></UseMemoUseCallBack>
+      <CustomHooks></CustomHooks>
     </div>
   );
 }
