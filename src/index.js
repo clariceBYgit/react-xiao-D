@@ -1,14 +1,19 @@
  import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-
-// 演示PureComponent
+import { Provider} from 'react-redux'
+import { applyMiddleware, createStore } from 'redux'
+import { firstRedux } from './NewReduxFloder/count.redux'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+const store = createStore(firstRedux, applyMiddleware(thunk,logger))
+// redux的演示
 ReactDOM.render(
-  <App></App>,
-  document.getElementById("root")
+  <Provider store={store}>  
+    <App></App>
+  </Provider>,
+  document.getElementById('root')
 )
-
 
 
 /*

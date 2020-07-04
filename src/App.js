@@ -14,6 +14,8 @@ import UseContextHook from './HOOK/UseContextHook'
 import UseReducerComp from './HOOK/UseReducerComp'
 import UseMemoUseCallBack from './HOOK/UseMemoUseCallBack'
 import CustomHooks from './HOOK/CustomHooks'
+// redux的使用
+import FirstRedux from './NewReduxFloder/FirstRedux'
 function App() {
   return (
     <div>
@@ -32,6 +34,8 @@ function App() {
       <UseReducerComp></UseReducerComp>
       <UseMemoUseCallBack></UseMemoUseCallBack>
       <CustomHooks></CustomHooks>
+      <h1>redux</h1>
+      <FirstRedux></FirstRedux>
     </div>
   );
 }
