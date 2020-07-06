@@ -1,17 +1,18 @@
-import React,{ useEffect , useRef, useContext } from 'react'
-
-const useChangeTitle = ( title ) =>{
-    useEffect(
-        ()=>{
-            document.title=title
-        },[title])
-}
+import React,{ useEffect , useRef, useState } from 'react'
 
 export default function CustomHooks() {
+    const [title,setTitle] = useState('原本的title')
+    const useChangeTitle = ( title ) =>{
+        useEffect(
+            ()=>{
+                document.title=title
+            },[title])
+    }
+    useChangeTitle(title)
     const inputValue = useRef()
     const changeT = () => {
        const newTitle = inputValue.current.value
-       return newTitle
+       return setTitle(newTitle)
         
     }
     return (
@@ -22,3 +23,4 @@ export default function CustomHooks() {
         </div>
     )
 }
+

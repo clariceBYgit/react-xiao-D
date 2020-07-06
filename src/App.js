@@ -16,6 +16,8 @@ import UseMemoUseCallBack from './HOOK/UseMemoUseCallBack'
 import CustomHooks from './HOOK/CustomHooks'
 // redux的使用
 import FirstRedux from './NewReduxFloder/FirstRedux'
+// react-router
+import NewReactRouter from './NewReactRouter'
 function App() {
   return (
     <div>
@@ -36,6 +38,8 @@ function App() {
       <CustomHooks></CustomHooks>
       <h1>redux</h1>
       <FirstRedux></FirstRedux>
+      <h1>react-router</h1>
+      <NewReactRouter></NewReactRouter>
     </div>
   );
 }
