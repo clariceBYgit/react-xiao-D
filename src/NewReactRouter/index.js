@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{ Component } from 'react'
 import { BrowserRouter as Router, Link, Switch ,Route, Redirect } from 'react-router-dom'
-import { Component } from 'react'
+import { connect, Provider } from 'react-redux'
+import store from './store'
+import {login} from './user.redux'
 function App() {
     return(
      <>
@@ -30,51 +32,40 @@ function App() {
 }
 
 // 路由守卫
-
+@connect( state=>({isLogin:state.isLogin}))
 class RouterGuard extends Component{
     
     render(){
         const { component:Component, ...otherProps } = this.props
         return(
-            <Route {...otherProps} render={(prop)=>(auth.isLogin? <Component {...prop}></Component> : <Redirect to={{pathname:'/login',from:prop.location.pathname}} ></Redirect>)} ></Route>
+            <Route {...otherProps} render={(prop)=>(this.props.isLogin? <Component {...prop}></Component> : <Redirect to={{pathname:'/login',from:prop.location.pathname}} ></Redirect>)} ></Route>
         )
     }
 }
 
+@connect(
+    state=>({isLogin:state.isLogin}),
+    {login}
+)
+
 class Login extends Component{
-    state = {
-        isLogin:false,
-    }
-    login=()=>{
-        auth.login(
-           ()=>{ this.setState({isLogin:true})}
-        )
-    }
     render(){
         // console.log(this.props.location.from)
         const from = this.props.location.from ? this.props.location.from : '/'
-        if(this.state.isLogin){
+        if(this.props.isLogin){
             return <Redirect to={from}></Redirect>
         }
         return(
             <>
              <div> 请登录</div>
-             <button onClick={this.login}>登录</button>
+             <button onClick={this.props.login}>登录</button>
             </>
 
         )
     }
 }
 
-// 模拟登录接口
-const auth = {
-        isLogin:false,
-        login(callback){
-            this.isLogin=true
-            setTimeout(callback,1000)
-        }
-   
-}
+
 
 function Home({location}){
     // console.log(location)
@@ -148,9 +139,12 @@ function NotFount() {
 export default function RouterEx() {
     return (
         <Router>
-            <App>
-            
-            </App>
+            <Provider store={store}>
+                <App>
+                
+                </App>
+            </Provider>
+           
         </Router>
         
     )
