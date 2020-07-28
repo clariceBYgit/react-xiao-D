@@ -5,6 +5,7 @@ import PureComponent from './Purememo/Purememo'
 import Composition from './Composition/Composition'
 // HOC高阶组件的使用
 import HOC from './HOC/HOC'
+import Banner from './HOC/Banner'
 // 、COntext的使用
 import Context2 from './Context/Context2'
 // HOOK的一系列使用
@@ -27,6 +28,8 @@ function App() {
       <Composition></Composition>
       <h1>高阶组件HOC</h1>
       <HOC></HOC>
+      <h2>使用高阶组件方式封装fetch请求并在Chengpin.jsx中使用</h2>
+      <Banner></Banner>
       <h1>COntext的使用</h1>
       <Context2></Context2>
       <h1>HOOKs的一系列使用</h1>
