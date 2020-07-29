@@ -19,6 +19,8 @@ import CustomHooks from './HOOK/CustomHooks'
 import FirstRedux from './NewReduxFloder/FirstRedux'
 // react-router
 import NewReactRouter from './NewReactRouter'
+// Error错误边界处理,将有可能出错的放在错误边界组件中
+import ErrorParent from './Error/ErrorParent'
 function App() {
   return (
     <div>
@@ -43,6 +45,8 @@ function App() {
       <FirstRedux></FirstRedux>
       <h1>react-router+redux-sage编写路由守卫登录认证</h1>
       <NewReactRouter></NewReactRouter>
+      <h1>Error错误边界处理,将有可能出错的放在错误边界组件中</h1>
+      <ErrorParent></ErrorParent>
     </div>
   );
 }
