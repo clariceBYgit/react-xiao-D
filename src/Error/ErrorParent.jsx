@@ -7,7 +7,7 @@ export default class ErrorParent extends Component {
         return (
             <div>
                 <p>错误边界处理</p>
-        <ErrorBoundary render={(error,errorInfo) => <p>{error.toString()}</p> }>
+                <ErrorBoundary render={(error, errorInfo) => <p>{error.toString()}</p>}>
                     <Errors />
                 </ErrorBoundary>
             </div>

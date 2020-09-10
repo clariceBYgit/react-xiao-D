@@ -1,4 +1,5 @@
  import React from 'react';
+//  import { Link } from 'react-router-dom'
 //  PureComponent的演示
 import PureComponent from './Purememo/Purememo'
 // Composition复合组件的使用

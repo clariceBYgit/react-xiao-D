@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 // useEffect用于处理副作用(数据获取，订阅，定时执行，手动修改React.Dom都是副作用)，相当于componentDidMount,componentDidUpdate,componentWillUnmount这三个生命周期
-
+// 可以同时要多个
 
 
 export default function UseEffectHook(){
     const [ count, setCount] = useState(0) 
     // 使用useEffect(callback,array)
+
     useEffect(()=>{
         // 处理副作用逻辑
         document.title=`点击了${count}次`
@@ -15,6 +16,21 @@ export default function UseEffectHook(){
             console.log('组件更新或卸载')
         }
     },[count])
+    
+
+    //实例2：  使用useEffect定时器
+    useEffect(()=>{
+      const timer = setTimeout( ()=>{
+        setCount( count + 1 )
+      },1000 )
+      //当项目中页面发生跳转必须清楚 定时器 在return中处理
+      return function(){
+          clearTimeout(timer)
+          console.log('定时器已清楚')
+      }
+    })
+
+
     /* array的三种情况
     1.  传入空数组（与数组中传入常量一致）   只执行document一次  不执行return的
      2. 传入非空数组   useEffect会在数组发生变化后执行每次都执行(document和return同时执行)
